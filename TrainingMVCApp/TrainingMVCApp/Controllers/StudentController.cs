@@ -31,5 +31,14 @@ namespace TrainingMVCApp.Controllers
 
             return View(std);
         }
+
+        [HttpPost]
+        public ActionResult Edit(Student std)
+        {
+            var student = studentList.Where(s => s.StudentID == std.StudentID).FirstOrDefault();
+            studentList.Remove(student);
+            studentList.Add(std);
+            return RedirectToAction("Index");
+        }
     }
 }

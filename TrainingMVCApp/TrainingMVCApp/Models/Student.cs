@@ -10,5 +10,7 @@ namespace TrainingMVCApp.Models
         public int StudentID { get; set; }
         public string StudentName { get; set; }
         public int Age { get; set; }
+        public bool isNewlyEnrolled { get; set; }
+        public string Password { get; set; }
     }
 }
