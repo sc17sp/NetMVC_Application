@@ -9,7 +9,7 @@ namespace ToDoList.Controllers
 {
     public class TodoController : Controller
     {
-        static IList<Todo> todoList = new List<Todo> 
+        static IList<Todo> todoList = new List<Todo>
         {
             new Todo() { TodoId = 1, Message = "Go do some shopping"},
             new Todo() { TodoId = 2, Message = "Call mum"},
@@ -19,12 +19,15 @@ namespace ToDoList.Controllers
         // GET: Todo
         public ActionResult Index()
         {
-        
+
             return View(todoList);
         }
 
-        public ActionResult Add() {
-            return View();
+        [HttpPost]
+        public ActionResult Index(Todo todo) {
+            todo.TodoId = 6;
+            todoList.Add(todo);
+            return RedirectToAction("Index");
         }
     }
 }

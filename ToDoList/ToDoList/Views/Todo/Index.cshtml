@@ -1,0 +1,44 @@
+﻿@model IEnumerable<ToDoList.Models.Todo>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Message)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Message)
+        </td>
+    </tr>
+}
+
+</table>
+
+@using (Html.BeginForm())
+{ 
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>New Todo</h4>
+        <hr />
+        @Html.ValidationSummary(true,"", new { @class = "text-danger"})
+        <div class="form-group">
+            @Html.Editor("Message")
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Add" class="btn btn-default" />
+        </div>
+    </div>
+}
