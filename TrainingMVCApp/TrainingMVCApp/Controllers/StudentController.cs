@@ -24,5 +24,12 @@ namespace TrainingMVCApp.Controllers
         {
             return View(studentList);
         }
+
+        public ActionResult Edit(int Id)
+        {
+            var std = studentList.Where(s => s.StudentID == Id).FirstOrDefault();
+
+            return View(std);
+        }
     }
 }
