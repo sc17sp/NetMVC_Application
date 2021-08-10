@@ -9,9 +9,9 @@ namespace TrainingMVCApp.Controllers
     public class StudentController : Controller
     {
         // GET: Student
-        public string Index()
+        public ActionResult Index()
         {
-            return "This is Index action method of student Controller";
+            return View();
         }
     }
 }
