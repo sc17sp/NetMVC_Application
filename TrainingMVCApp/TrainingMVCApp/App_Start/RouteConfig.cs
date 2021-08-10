@@ -16,8 +16,7 @@ namespace TrainingMVCApp
             routes.MapRoute(
                 name: "Student",
                 url: "student/{id}",
-                defaults: new { controller = "Student", action = "Index"},
-                constraints: new { id = @"\d+"}
+                defaults: new { controller = "Student", action = "Index"}
                 );
 
             routes.MapRoute(
