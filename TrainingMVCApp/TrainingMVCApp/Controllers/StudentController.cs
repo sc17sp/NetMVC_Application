@@ -22,7 +22,7 @@ namespace TrainingMVCApp.Controllers
         // GET: Student
         public ActionResult Index()
         {
-            return View();
+            return View(studentList);
         }
     }
 }
